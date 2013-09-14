@@ -4,7 +4,7 @@ namespace Jazzyweb\Bioritmos\Controller;
 
 use Jazzyweb\Framework\Response;
 
-class BioritmosController {
+class Controller {
 
     public function index($request){
 
