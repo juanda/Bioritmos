@@ -1,5 +1,7 @@
 <?php
 
+namespace Jazzyweb\Bioritmos\Model;
+
 /**
  *
  * class BioRitmo
@@ -87,7 +89,7 @@ define('INT_C_B', 112);
 
 // end customization; do not edit bellow this line
 
-class BioRitmo {
+class Bioritmos {
 
     private $daysToShow;
     private $diagramWidth;
