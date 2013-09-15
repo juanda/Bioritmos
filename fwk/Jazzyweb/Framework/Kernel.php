@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: juandalibaba
- * Date: 14/09/13
- * Time: 11:26
- * To change this template use File | Settings | File Templates.
- */
 
 namespace Jazzyweb\Framework;
 
@@ -18,18 +11,11 @@ class Kernel {
         $this->config = $config;
     }
 
-    public static function createFromGlobals(){
-        return array(
-            'get' => $_GET,
-            'post' => $_POST,
-            'files' => $_FILES,
-            'server' => $_SERVER);
-    }
     public function handle($request)
     {
         $router = new Router($this->config['routes']);
 
-        $path = (isset($request['server']['PATH_INFO']))? $request['server']['PATH_INFO'] : '/';
+        $path = $request->getPath();
 
         $controlador = $router->getController($path);
 

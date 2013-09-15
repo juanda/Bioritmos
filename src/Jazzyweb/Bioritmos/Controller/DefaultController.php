@@ -2,24 +2,29 @@
 
 namespace Jazzyweb\Bioritmos\Controller;
 
+use Jazzyweb\Bioritmos\Model\Bioritmos;
+use Jazzyweb\Framework\Controller;
 use Jazzyweb\Framework\Response;
 
-class Controller {
+class DefaultController extends Controller{
 
     public function index($request){
 
-        $response = new Response();
-
-        $response->setContent('<html><body><h1>Index</h1></body></html>');
+        $this->setLayout(__DIR__ . '/../Views/layout.php');
+        $response = $this->createView(__DIR__ . '/../Views/Default/index.php');
 
         return $response;
     }
 
     public function bioritmo($request){
 
-        $response = new Response();
+        $fechaNacimiento = $request->get('fechaN');
 
-        $response->setContent('<html><body><h1>Bioritmo</h1></body></html>');
+        $bior = new Bioritmos($fechaNacimiento);
+        $bior->DrawBior(__DIR__.'/../../../../web/bioritmos/my_bior.png');
+
+        $this->setLayout(__DIR__ . '/../Views/layout.php');
+        $response = $this->createView(__DIR__ . '/../Views/Default/bioritmo.php', array('file' => 'my_bior.png'));
 
         return $response;
     }

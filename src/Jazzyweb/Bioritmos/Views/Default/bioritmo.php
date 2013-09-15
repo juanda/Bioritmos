@@ -1,8 +1,6 @@
-<?php
-/**
- * Created by JetBrains PhpStorm.
- * User: juandalibaba
- * Date: 14/09/13
- * Time: 16:33
- * To change this template use File | Settings | File Templates.
- */
+<div class="login">
+        <img src="<?php echo asset('bioritmos/'.$file)?>" />
+    <div class="span10">
+    <a href="<?php echo url('/') ?>" class="btn btn-danger">Otro Bioritmo</a>
+        </div>
+</div>

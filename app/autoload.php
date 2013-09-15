@@ -4,7 +4,7 @@ function __autoload($className)
 {
     $className = ltrim($className, '\\');
     $fileName  = '';
-    $dirSrc = array(__DIR__.'/../src', __DIR__);
+    $dirSrc = array(__DIR__.'/../src', __DIR__.'/../fwk');
     $namespace = '';
     if ($lastNsPos = strrpos($className, '\\')) {
         $namespace = substr($className, 0, $lastNsPos);

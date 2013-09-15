@@ -55,8 +55,8 @@ define('EMO_PERIOD', 28);
 define('INT_PERIOD', 33);
 
 define('DAYS_TO_SHOW', 30); // number of days on diagram
-define('DIAGRAM_WIDTH', 600);
-define('DIAGRAM_HEIGHT',400);
+define('DIAGRAM_WIDTH', 865);
+define('DIAGRAM_HEIGHT',475);
 
 define('FILE_FOR_DIAG', 'slika2.png'); // file for diagram graphyc; must be .png file
 
@@ -111,17 +111,18 @@ class Bioritmos {
         $this->showINT = true;
 
         if ($date_for_bior == -1)
-            $date_for_bior = date('Y-m-d', time());
+            //$date_for_bior = date('Y-m-d', time());
+            $date_for_bior = date('d/m/Y', time());
 
         // date for bior - timestamp
         $this->date_for_bior_epoch = strtotime($date_for_bior);
 
         // dateparts for birth_date
-        $birth_date_parts = explode('-', $birth_date);
+        $birth_date_parts = explode('/', $birth_date);
         list ($this->birth_date_y, $this->birth_date_m, $this->birth_date_d) = $birth_date_parts;
 
         // dateparts for date_for_bior
-        $date_for_bior_parts = explode('-', $date_for_bior);
+        $date_for_bior_parts = explode('/', $date_for_bior);
         list ($this->date_for_bior_y, $this->date_for_bior_m, $this->date_for_bior_d) = $date_for_bior_parts;
 
     }
