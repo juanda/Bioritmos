@@ -3,15 +3,22 @@
 namespace Jazzyweb\Bioritmos\Controller;
 
 use Jazzyweb\Bioritmos\Model\Bioritmos;
-use Jazzyweb\Framework\Controller;
 use Jazzyweb\Framework\Response;
+use Jazzyweb\Framework\Templating;
 
-class DefaultController extends Controller{
+class DefaultController{
+
+    public function __construct(){
+        $this->templating = new Templating();
+    }
 
     public function index($request){
 
-        $this->setLayout(__DIR__ . '/../Views/layout.php');
-        $response = $this->createView(__DIR__ . '/../Views/Default/index.php');
+        $templating = new Templating();
+        $templating->setLayout(__DIR__ . '/../Views/layout.php');
+        $html = $templating->createView(__DIR__ . '/../Views/Default/index.php');
+
+        $response = new Response($html);
 
         return $response;
     }
@@ -23,10 +30,13 @@ class DefaultController extends Controller{
         $bior = new Bioritmos($fechaNacimiento);
         $bior->DrawBior(__DIR__.'/../../../../web/bioritmos/my_bior.png');
 
-        $this->setLayout(__DIR__ . '/../Views/layout.php');
-        $response = $this->createView(__DIR__ . '/../Views/Default/bioritmo.php', array('file' => 'my_bior.png'));
+        $templating = new Templating();
+        $templating->setLayout(__DIR__ . '/../Views/layout_basic.php');
+        $html = $templating->createView(__DIR__ . '/../Views/Default/bioritmo.php',
+            array('file' => 'bioritmos/my_bior.png'));
+
+        $response = new Response($html);
 
         return $response;
     }
-
 }

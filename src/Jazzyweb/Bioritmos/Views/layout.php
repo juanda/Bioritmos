@@ -22,7 +22,7 @@
 <div class="container">
     <h1>Cálculo de Bioritmos</h1>
 
-<?php echo $contenidoPlantilla ?>
+<?php echo $templateContent ?>
 </div> <!-- /container -->
 
 

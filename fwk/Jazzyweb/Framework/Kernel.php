@@ -30,4 +30,10 @@ class Kernel {
             new $controlador['class'],
             $controlador['action']), $request);
     }
+
+    public static function loadConfig($configFile){
+        $config = array();
+        include($configFile);
+        return $config;
+    }
 }

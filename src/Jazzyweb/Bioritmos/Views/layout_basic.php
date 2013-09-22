@@ -8,7 +8,7 @@
 <h1>Layout</h1>
 
 <div id="contenido">
-    <?php echo $contenidoPlantilla ?>
+    <?php echo $templateContent ?>
 </div>
 
 </body>

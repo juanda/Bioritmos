@@ -7,18 +7,14 @@ class Response {
     private $headers;
     private $content;
 
-    public function __construct(){
+    public function __construct($content=null){
         $this->headers = array();
-        $this->content = null;
+        $this->content = $content;
     }
 
     public function addHeader($header){
 
         $this->headers[] = $header;
-    }
-
-    public function removeHeader($header){
-
     }
 
     public function setContent($content){

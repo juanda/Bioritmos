@@ -11,12 +11,10 @@ function url($ruta){
     return $preDir. $ruta;
 }
 
-?>
+ob_start();
+include $template;
+$templateContent = ob_get_clean();
 
-<?php ob_start() ?>
-<?php include $template ?>
-<?php $contenidoPlantilla = ob_get_clean() ?>
-
-<?php ob_start() ?>
-<?php include $layout ?>
-<?php $contenido = ob_get_clean() ?>
+ob_start();
+include $layout;
+$content = ob_get_clean();

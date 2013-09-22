@@ -3,7 +3,7 @@
 namespace Jazzyweb\Framework;
 
 
-class Controller {
+class Templating {
 
     private $layout;
 
@@ -32,12 +32,9 @@ class Controller {
             }
         }
 
+        $content = '';
         include __DIR__ . '/view.php';
 
-        $response = new Response();
-
-        $response->setContent($contenido);
-
-        return $response;
+        return $content;
     }
 }
