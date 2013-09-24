@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Loading Bootstrap -->
     <link href="<?php echo asset('css/bootstrap.css') ?>" rel="stylesheet">
+    <link href="<?php echo asset('css/jquery-ui-1.10.3.custom.min.css') ?>" rel="stylesheet">
     <!-- Loading Flat UI -->
     <link href="<?php echo asset('css/flat-ui.css') ?>" rel="stylesheet">
     <link rel="shortcut icon" href="<?php asset('images/favicon.ico') ?>">
+
+    <script src="<?php echo asset('js/jquery-1.9.1.js') ?>"></script>
+    <script src="<?php echo asset('js/jquery-ui-1.10.3.custom.min.js') ?>"></script>
+    <script src="<?php echo asset('js/bootstrap.min.js') ?>"></script>
 </head>
 <body>
 <div class="container">
@@ -16,10 +21,6 @@
 
 <?php echo $templateContent ?>
 </div> <!-- /container -->
-
-<!-- Load JS here for greater good =============================-->
-<script src="<?php echo asset('js/jquery-1.8.3.min.js') ?>"></script>
-<script src="<?php echo asset('js/bootstrap.min.js') ?>"></script>
 
 </body>
 </html>

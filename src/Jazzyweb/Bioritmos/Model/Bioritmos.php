@@ -112,13 +112,13 @@ class Bioritmos {
 
         if ($date_for_bior == -1)
             //$date_for_bior = date('Y-m-d', time());
-            $date_for_bior = date('d/m/Y', time());
+            $date_for_bior = date('m/d/Y', time());
 
         // date for bior - timestamp
         $this->date_for_bior_epoch = strtotime($date_for_bior);
 
         // dateparts for birth_date
-//        print_r($birth_date);exit;
+       //print_r($birth_date);exit;
         $birth_date_parts = explode('/', $birth_date);
         list ($this->birth_date_y, $this->birth_date_m, $this->birth_date_d) = $birth_date_parts;
 
