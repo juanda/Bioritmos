@@ -31,7 +31,7 @@ class DefaultController{
         $bior->DrawBior(__DIR__.'/../../../../web/bioritmos/my_bior.png');
 
         $templating = new Templating();
-        $templating->setLayout(__DIR__ . '/../Views/layout_basic.php');
+        $templating->setLayout(__DIR__ . '/../Views/layout.php');
         $html = $templating->createView(__DIR__ . '/../Views/Default/bioritmo.php',
             array('file' => 'bioritmos/my_bior.png'));
 
